@@ -14,9 +14,11 @@ export class InputTodo extends Component {
   };
 
   handleSubmit = (e) => {
+    const { title } = this.state;
+    const { addTodoItem } = this.props;
     e.preventDefault();
-    return this.state.title.trim()
-      ? (this.props.addTodoItem(this.state.title), this.setState({ title: '' }))
+    return title.trim()
+      ? (addTodoItem(this.state.title), this.setState({ title: '' }))
       : alert('Please write item');
   };
 
