@@ -13,7 +13,6 @@ export class TodoItem extends Component {
   handleEditComplete = (e) => (e.key === 'Enter' ? this.setState({ editing: false }) : null);
 
   componentWillUnmount() {
-    console.log('Cleaning up...');
   }
 
   render() {

@@ -45,7 +45,6 @@ export class TodoContainer extends Component {
   };
 
   componentDidMount() {
-    console.log('component did mount');
     const temp = localStorage.getItem('todos');
     const loadedTodos = JSON.parse(temp);
     if (loadedTodos) {
@@ -56,17 +55,14 @@ export class TodoContainer extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('component Did update');
     if (prevState.todos !== this.state.todos) {
       const temp = JSON.stringify(this.state.todos);
       localStorage.setItem('todos', temp);
-      console.log('function ran');
+ 
     }
-    console.log('component Did update 2');
   }
 
   render() {
-    console.log('component did run');
     return (
       <div className="container">
         <div className="inner">
